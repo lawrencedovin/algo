@@ -23,19 +23,19 @@
 
 // 2.)
 const twoNumberSum = (array, targetSum) => {
-  // Create a numbers object to store in already iterated values to check if targetNumber already exist while looping.
-  const numbers = {};
-  // loop through array using for of loop.
-  for(number of array) {
-      // Create variable targetNumber = targetSum - number, to check which number is needed to make up targetSum.
-      const targetNumber = targetSum - number;
-      // If targetNumber is in numbers object then return [targetNumber, number];
-      if(targetNumber in numbers) return [targetNumber, number];
-      // If targetNumber is not in numbers object store the number to the numbers object.
-      else numbers[number] = true;
-  }
-  // If array is looped without finding the targetNumber in array return [];
-  return [];
+    // Create a numbers object to store in already iterated values to check if targetNumber already exist while looping.
+    const numbers = {};
+    // loop through array using for of loop.
+    for(number of array) {
+        // Create variable targetNumber = targetSum - number, to check which number is needed to make up targetSum.
+        const targetNumber = targetSum - number;
+        // If targetNumber is in numbers object then return [targetNumber, number];
+        if(targetNumber in numbers) return [targetNumber, number];
+        // If targetNumber is not in numbers object store the number to the numbers object.
+        else numbers[number] = true;
+    }
+    // If array is looped without finding the targetNumber in array return [];
+    return [];
 }
 
 console.log(twoNumberSum([3, 5, -4, 8, 11, 1, -1, 6], 10));
