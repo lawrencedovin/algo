@@ -1,41 +1,35 @@
-// Write a function that takes in a non-empty array of distinct integers and an integer representing a target sum.
-// If any two numbers in the input array sum up to the target sum, the function should return them in an array, in any order.
-// If none of the numbers sum up to the target sum the function should return an empty array.
-
-// array = [3, 5, -4, 8, 11, 1, -1, 6]
-// targetSum = 10
-
-// Sample Output
-// [-1, 11]
-
-// 1.)
-// const twoNumberSum = (array, targetSum) => {
-//     for(let i = 0; i < array.length; i++) {
-//         for(let j = i+1; j < array.length; j++){
-//             if(array[i] + array[j] === targetSum) return [array[i], array[j]];
-//         }
-//     }
-//     return [];
-// }
-
-// console.log(twoNumberSum([3, 5, -4, 8, 11, 1, -1, 6], 10));
+array = [5, 1, 22, 25, 6, -1, 8, 10];
+sequence = [1, 6, -1, 10];
 
 
-// 2.)
-const twoNumberSum = (array, targetSum) => {
-    // Create a numbers object to store in already iterated values to check if targetNumber already exist while looping.
-    const numbers = {};
-    // loop through array using for of loop.
-    for(number of array) {
-        // Create variable targetNumber = targetSum - number, to check which number is needed to make up targetSum.
-        const targetNumber = targetSum - number;
-        // If targetNumber is in numbers object then return [targetNumber, number];
-        if(targetNumber in numbers) return [targetNumber, number];
-        // If targetNumber is not in numbers object store the number to the numbers object.
-        else numbers[number] = true;
+// Create variable for sequenceIndex
+// Iterate array 
+// if loops through whole array without iterating until the end of sequence array then return false
+// Iterate sequence until sequenceIndex < sequence.length if sequence goes outside loop then return true.
+// If match is found where sequence[sequenceIndex] === array[arrayIndex] then sequenceIndex += 1
+// 
+/*
+
+array = [5, 1, 22, 25, 6, -1, 8, 10];
+            ai
+sequence = [1, 6, -1, 10];
+            si
+
+*/
+
+const validateSubsequence = (array, sequence) => {
+    let sequenceIndex = 0;
+    let arrayIndex = 0;
+
+    // Executes this block of code while both conditions are met:
+    // arrayIndex < array.length and sequenceIndex < sequence.length.
+    // If both of these conditions are not met then the loop breaks outside the loop.
+    while(arrayIndex < array.length && sequenceIndex < sequence.length) {
+        if(array[arrayIndex] === sequence[sequenceIndex]) sequenceIndex++;
+        if(sequenceIndex === sequence.length) return true;
+        arrayIndex++;
     }
-    // If array is looped without finding the targetNumber in array return [];
-    return [];
+    return false;
 }
 
-console.log(twoNumberSum([3, 5, -4, 8, 11, 1, -1, 6], 10));
+console.log(validateSubsequence(array, sequence)); 

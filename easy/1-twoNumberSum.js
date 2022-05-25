@@ -59,7 +59,7 @@ const twoNumberSum = (array, targetSum) => {
     // Then the left pointer needs to increase by 1 so the value of the currentSum increases as well.
     // Else currentSum > targetSum
     // Then the right pointer needs to decrease by 1 so the value of the currentSum decreases as well.
-    currentSum < targetSum ? left++ : right++; 
+    currentSum < targetSum ? left++ : right--; 
   }
     // If array is looped without finding the targetNumber in array return [];
     return [];
