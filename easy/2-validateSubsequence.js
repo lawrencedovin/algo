@@ -40,3 +40,21 @@ sequence = [1, 6, -1, 10];
 }
 
 console.log(validateSubsequence(array, sequence)); 
+
+// Solution #2
+const validateSubsequence2 = (array, sequence) => {
+    
+  // Make sequenceIndex variable that iterates everytime array element matches with a sequence element.
+  let sequenceIndex = 0;
+  // Loop through array elements
+  for(value of array) {
+      // if array element === sequence element, sequenceIndex++.
+      if(value === sequence[sequenceIndex]) sequenceIndex++;
+      // if sequenceIndex === sequence.length return true.
+      if(sequenceIndex === sequence.length) return true;
+  }
+  // if array is looped fully without sequenceIndex === sequence.length return false.
+  return false;
+}
+
+console.log(validateSubsequence2(array, sequence)); 
