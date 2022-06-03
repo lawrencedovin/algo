@@ -1,4 +1,4 @@
-// Solution #1
+// 1.) O(n) time | O(1) space
 function isValidSubsequence(array, sequence) {
     // Write your code here.
       let arrayIndex = 0;
@@ -41,7 +41,7 @@ sequence = [1, 6, -1, 10];
 
 console.log(validateSubsequence(array, sequence)); 
 
-// Solution #2
+// 2.) O(n) time | O(1) space
 const validateSubsequence2 = (array, sequence) => {
     
   // Make sequenceIndex variable that iterates everytime array element matches with a sequence element.
